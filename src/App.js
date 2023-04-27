@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import Navigation from './Components/Navigation/Navigation'
+import Board from './Components/Board/Board'
+import Nav from './Components/Navigation/Nav'
+import Login from './Login'
+import authContext from './Context/authContext'
 
-function App() {
+const App = () => {
+const [credentials, setCredentials] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>{
+        credentials.authenticated ?
+      <React.Fragment>
+        <h3 className='Logo'>QUIZit</h3>
+        <Navigation />
+        <authContext.Provider value={{credentials}} >
+          <Board />
+        </authContext.Provider>
+        <Nav />
+      </React.Fragment> :
+      <authContext.Provider value={{credentials, setCredentials}} >
+        <Login />
+      </authContext.Provider>
+    }</>
+  )
 }
 
-export default App;
+export default App

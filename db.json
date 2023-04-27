@@ -1,0 +1,206 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "Le Blunc",
+        "password": "1234",
+        "dp": "LB",
+        "score": 230
+      },
+      {
+        "id": 2,
+        "username": "Naomi",
+        "password": "1234",
+        "dp": "N",
+        "score": 658
+      },
+      {
+        "id": 3,
+        "username": "Grace Michembo",
+        "password": "1234",
+        "dp": "GM",
+        "score": 1511
+      },
+      {
+        "id": 4,
+        "username": "Owen Mithon",
+        "password": "1234",
+        "dp": "OM",
+        "score": 25
+      },
+      {
+        "id": 5,
+        "username": "Lidia Tembo",
+        "password": "1234",
+        "dp": "LT",
+        "score": 1111
+      },
+      {
+        "id": 6,
+        "username": "Maria Santos",
+        "password": "1234",
+        "dp": "MS",
+        "score": 300
+      },
+      {
+        "id": 7,
+        "username": "Bright Amazulu",
+        "password": "1234",
+        "dp": "BA",
+        "score": 1300
+      },
+      {
+        "id": 8,
+        "username": "#Khingi",
+        "password": "1234",
+        "dp": "#K",
+        "score": 1800
+      },
+      {
+        "id": 9,
+        "username": "Phady",
+        "password": "1234",
+        "dp": "P",
+        "score": 990
+      },
+      {
+        "id": 10,
+        "username": "Maya11",
+        "password": "1234",
+        "dp": "M11",
+        "score": 743
+      },
+      {
+        "id": 11,
+        "username": "Pete Luis",
+        "password": "1234",
+        "dp": "PL",
+        "score": 20
+      },
+      {
+        "id": 12,
+        "username": "Joe Lington",
+        "password": "1234",
+        "dp": "JL",
+        "score": 93
+      }
+    ],
+    "topics": ["javascript", "geography"],
+    "javascript": [
+        {
+          "id": 1,
+          "topic": "javascript",
+          "question": "What is the difference between let and var?",
+          "answer": {
+            "options": [
+              "var is function scoped and let is block scoped",
+              "let is function scoped and var is block scoped",
+              "let is only used for arrays and var is used for all types",
+              "var is only used for arrays and let is used for all types"
+            ],
+            "correctIndex": 0
+          }
+        },
+        {
+          "id": 2,
+          "topic": "javascript",
+          "question": "What is the output of console.log(typeof [])?",
+          "answer": {
+            "options": [
+              "object",
+              "array",
+              "null",
+              "undefined"
+            ],
+            "correctIndex": 0
+          }
+        },
+        {
+          "id": 3,
+          "topic": "javascript",
+          "question": "What is the difference between null and undefined?",
+          "answer": {
+              "options": [
+              "null is assigned by developers and undefined is assigned by JavaScript",
+              "null is an object and undefined is a primitive",
+              "null is a primitive and undefined is an object",
+              "null is the absence of a value and undefined means a variable has been declared but has not yet been assigned a value"
+            ],
+            "correctIndex": 3
+          }
+        },
+        {
+          "id": 4,
+          "topic": "javascript",
+          "question": "What does the 'use strict' statement do?",
+          "answer": {
+            "options": [
+                "forces the use of the latest ECMAScript features",
+              "enables stricter type checking",
+              "disables strict mode",
+              "forces all errors to be caught and handled"
+            ],
+            "correctIndex": 1
+          }
+        },
+        {
+            "id": 5,
+          "topic": "javascript",
+          "question": "What is the difference between == and ===?",
+          "answer": {
+              "options": [
+                  "== performs type coercion while === does not",
+                  "=== performs type coercion while == does not",
+                  "== compares value and type while === compares only value",
+              "=== compares value and type while == compares only value"
+            ],
+            "correctIndex": 0
+        }
+        },
+        {
+            "id": 6,
+            "topic": "javascript",
+            "question": "What is hoisting?",
+            "answer": {
+                "options": [
+                    "the process of defining all variables at the top of the function scope",
+              "the process of defining all variables at the top of the global scope",
+              "the process of defining all functions at the top of the function scope",
+              "the process of defining all functions at the top of the global scope"
+            ],
+            "correctIndex": 2
+          }
+        },
+        {
+            "id": 7,
+            "topic": "javascript",
+            "question": "What is closure?",
+            "answer": {
+                "options": [
+                    "a way to access variables outside the current scope",
+              "a way to protect variables from being accessed outside the current scope",
+              "a way to create private variables and methods",
+              "a way to make sure that variables are always defined before they are used"
+            ],
+            "correctIndex": 0
+          }
+        }
+    ],      
+    "geography": [
+        {
+            "id": 11,
+            "topic": "geography",
+            "question": "two examples of land forms and drainage?",
+            "answer": {
+                "options": [
+                    "Monkeys and totorses",
+              "land owners and tenants",
+              "hills and rivers",
+              "sky and space"
+            ],
+            "correctIndex": 2
+          }
+        }
+       
+    ]
+}
