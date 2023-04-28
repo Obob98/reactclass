@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Loader from './Loader'
+import Error from './Error'
 
 const initialUser = {
     username: '',
@@ -14,7 +15,8 @@ const initialUser = {
 const Login = () => {
     const [spotlight, setSpotlight] = useState('login')
     const [loading, setLoading] = useState(false)
-
+    const [error, setError] = useState(false)
+    const [handleClickValue, setHandleClickValue] = useState('')
     const [user, setUser] = useState(initialUser)
 
     const {setCredentials} = useContext(authContext)
@@ -44,6 +46,7 @@ const Login = () => {
         if(user.username === '' || user.password === '') return alert('please fill all fields before submiting')
         axios.post('https://gleaming-gray-gecko.cyclic.app/quizit/api/v1/users/getuser', user)
         .then(response => {
+                setError(false)
                 setLoading(false)
                 console.log(response.data.length)
                 if(response.data.length){
@@ -56,7 +59,10 @@ const Login = () => {
                     alert('username or password incorrect')
                 }
             })
-        .catch(err => console.log('in login submit catch: ', err))
+        .catch(err => {
+            setLoading(false)
+            setError(true)
+        })
     }
 
     const submitSignup = () => {
@@ -64,19 +70,23 @@ const Login = () => {
         if(user.username === '' || user.password === '') return alert('please fill all fields before submiting')
         axios.post('https://gleaming-gray-gecko.cyclic.app/quizit/api/v1/users/createuser', user)
         .then(response => {
-                console.log(response.data.length)
-                if(response.data.length){
-                    setCredentials({
-                        authenticated: true,
-                        user: response.data
-                    })
+            setError(false)
+            setLoading(false)
+            if(response.data.length){
+                setCredentials({
+                    authenticated: true,
+                    user: response.data
+                })
                     setLoading(false)
-                }else{
-                    // setUser(initialUser)
-                    alert('some error occured')
-                }
+            }else{
+                // setUser(initialUser)
+                alert('some error occured')
+            }
             })
-        .catch(err => console.log('in login submit catch: ', err))
+        .catch(err => {
+            setLoading(false)
+            setError(true)
+        })
     }
 
   return (
@@ -84,6 +94,7 @@ const Login = () => {
         <div className='container'>
         {
             loading ? <Loader /> :
+            error ? <Error handleClick={handleClick} handleClickValue={handleClickValue} /> :
             <>
 
                 <div className={`signup ${spotlight === 'signup' ? 'spotlight' : ''}`}>

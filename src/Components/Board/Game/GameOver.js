@@ -12,7 +12,7 @@ const GameOver = ({score, reset}) => {
 
   useEffect(() => {
       console.log(score)
-      axios.put(`http://localhost:5000/quizit/api/v1/users/addScore/${credentials.user[0]._id}`, {score: score})
+      axios.put(`https://gleaming-gray-gecko.cyclic.app/quizit/api/v1/users/addScore/${credentials.user[0]._id}`, {score: score})
       .then(response => setCredentials({...credentials, user: response.data}))
       .catch(err => console.log(err))
   }, [])

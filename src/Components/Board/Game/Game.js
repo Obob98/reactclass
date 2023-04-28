@@ -16,8 +16,6 @@ const Game = () => {
   const [fetch, setFetch] = useState(false)
   const [gameOver, setGameover] = useState(false)
   
-  const [loading, setLoading] = useState(false)
-
   const {game, gameSetter} = useContext(gameContext)
 
   useEffect(() => {
@@ -101,7 +99,7 @@ const Game = () => {
             <Button onclick={proceedToGame} {...{width: 200, background: '#2C5663', color: '#f1f1f1', value: 'Proceed'}} />
           </> :
           <>
-            <Query />
+            <Query />  
             <Prompts />
             <Button onclick={handleNext} {...{width: 200, background: '#2C6342', color: '#f1f1f1', value: 'Next'}} />
           </>
